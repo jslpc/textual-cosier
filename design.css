@@ -414,10 +414,6 @@ div.line[data-line-type="nick"] .sender,
 div.line[data-line-type="mode"] .sender,
 div.line[data-line-type="topic"] .sender,
 div.line[data-line-type="website"] .sender,
-div.line[data-line-type="join"] .message,
-div.line[data-line-type="part"] .message,
-div.line[data-line-type="kick"] .message,
-div.line[data-line-type="quit"] .message,
 div.line[data-line-type="kill"] .message,
 div.line[data-line-type="nick"] .message,
 div.line[data-line-type="mode"] .message,
@@ -426,15 +422,32 @@ div.line[data-line-type="website"] .message {
   padding: 2px 8px;
 }
 
-body[dir="ltr"] div.line[data-line-type="join"] .message:before {
+div.line[data-line-type="join"] .message,
+div.line[data-line-type="kick"] .message,
+div.line[data-line-type="part"] .message,
+div.line[data-line-type="quit"] .message {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+	visibility: hidden;
+}
+
+div.line[data-line-type="join"] b,
+div.line[data-line-type="kick"] b,
+div.line[data-line-type="part"] b,
+div.line[data-line-type="quit"] b {
+	visibility: visible;
+}
+
+body[dir="ltr"] div.line[data-line-type="join"] b:before {
   content: "→ ";
   color: #0c0;
   /* margin-right: 0.4em; */
 }
 
-body[dir="ltr"] div.line[data-line-type="kick"] .message:before,
-body[dir="ltr"] div.line[data-line-type="part"] .message:before,
-body[dir="ltr"] div.line[data-line-type="quit"] .message:before {
+body[dir="ltr"] div.line[data-line-type="kick"] b:before,
+body[dir="ltr"] div.line[data-line-type="part"] b:before,
+body[dir="ltr"] div.line[data-line-type="quit"] b:before {
   content: "← ";
   color: #e00;
   /* margin-right: 0.4em; */
@@ -446,15 +459,15 @@ body[dir="ltr"] div.line[data-line-type="nick"] .message:before {
   /* margin-right: 0.4em; */
 }
 
-body[dir="rtl"] div.line[data-line-type="join"] .message:before {
+body[dir="rtl"] div.line[data-line-type="join"] b:before {
   content: "→ ";
   color: #0c0;
   /* margin-left: 0.4em; */
 }
 
-body[dir="rtl"] div.line[data-line-type="kick"] .message:before,
-body[dir="rtl"] div.line[data-line-type="part"] .message:before,
-body[dir="rtl"] div.line[data-line-type="quit"] .message:before {
+body[dir="rtl"] div.line[data-line-type="kick"] b:before,
+body[dir="rtl"] div.line[data-line-type="part"] b:before,
+body[dir="rtl"] div.line[data-line-type="quit"] b:before {
   content: "← ";
   color: #e00;
   /* margin-left: 0.4em; */
