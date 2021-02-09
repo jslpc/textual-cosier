@@ -1,7 +1,11 @@
-Cosy Textual Style
+Cosier Textual Style
 ====================
 
-Cosy is a dark theme for the [Textual IRC client](https://www.codeux.com/textual/). Based slightly to [Sulaco](https://github.com/rgrove/textual-sulaco). As usual, I needed something different.
+This is a *very* slightly modified version of the [Cozy](https://github.com/ronilaukkarinen/textual-cosy) theme for Textual. So far, the only modification I've made is the removal of `username@address` from join/part/kick messages.
+
+----
+
+Cosy is a dark theme for the [Textual IRC client](https://www.codeux.com/textual/). Based slightly to [Sulaco](https://github.com/rgrove/textual-sulaco).
 
 ![Screenshot](https://i.imgur.com/uvDsvXK.png)
 
